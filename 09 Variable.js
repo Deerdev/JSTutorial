@@ -19,7 +19,6 @@ function foo() {
     console.log(x);
     var y = 'Bob';
 }
-
 foo(); // "Hello, Bob"
 
 // JavaScript引擎自动提升了变量y的声明，但不会提升变量y的赋值:
@@ -29,7 +28,6 @@ function foo() {
     console.log(x);
     y = 'Bob';
 }
-
 foo(); // Hello, undefined
 
 // ** 请严格遵守“在函数内部首先申明所有变量”这一规则

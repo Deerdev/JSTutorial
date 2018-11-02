@@ -1,0 +1,15 @@
+{
+  "name": "hellokoa",
+  "version": "1.0.0",
+  "description": "hello koa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "koa": "^2.6.1"
+  },
+  "author": "deer",
+  "license": "MIT"
+}

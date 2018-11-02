@@ -1,5 +1,6 @@
 /// 1.Promise对象
-// Promise有各种开源实现，在ES6中被统一规范，由浏览器直接支持
+// Promise有各种开源实现，在ES6中被统一规范，由浏览器直接支持; 
+// new Promise(function () {});
 // 异步方法 链式调用：job1.then(job2).catch(handleError);
 
 // 异步test方法，1秒后执行

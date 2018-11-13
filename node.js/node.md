@@ -7,6 +7,8 @@ $ node
 >
 ```
 
+退出：`.exit`
+
 ## 运行js
 
 ```shell
@@ -179,7 +181,7 @@ module.exports = {
 module.exports = function () { return 'foo'; };
 ```
 
-最终，我们强烈建议使用module.exports = xxx的方式来输出模块变量，这样，你只需要记忆一种方法。
+最终，建议使用module.exports = xxx的方式来输出模块变量。
 
 > 是否可以把exports看成是对module.exports的引用呢,
 可以用exports.foo往里面增加新的属性,

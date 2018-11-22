@@ -80,7 +80,7 @@ Object.getPrototypeOf(xiaoming) === Student.prototype; // true
 xiaoming instanceof Student; // true
 
 /*
-Student.prototype指向的对象就是xiaoming、xiaohong的原型对象someObject1
+Student.prototype指向的对象就是xiaoming的原型对象someObject1
 这个原型对象someObject1自己还有个属性constructor，指向Student函数本身
                                        +---------+
                                        |         |

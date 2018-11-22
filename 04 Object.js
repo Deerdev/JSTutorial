@@ -54,3 +54,26 @@ var xiaoming = {
 };
 xiaoming.hasOwnProperty('name'); // true
 xiaoming.hasOwnProperty('toString'); // false
+
+
+/// ES6新增
+
+
+/// Object.is()
+// ES6 提出“Same-value equality”（同值相等）算法，用来解决这个问题。Object.is就是部署这个算法的新方法。它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
+
+Object.is('foo', 'foo')
+// true
+Object.is({}, {})
+// false
+
+// [不同之处] 只有两个：一是+0不等于-0，二是NaN等于自身。
++0 === -0 //true
+NaN === NaN // false
+
+Object.is(+0, -0) // false
+Object.is(NaN, NaN) // true
+
+
+
+/// Object.assign()

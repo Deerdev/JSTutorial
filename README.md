@@ -1,4 +1,4 @@
 # Purpose
 
-- [ ] 重温js(20%)
-- [ ] 拓展react
+- [x] 重温 js
+- [x] react

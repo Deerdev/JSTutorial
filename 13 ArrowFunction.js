@@ -1,8 +1,10 @@
 /// 1.箭头函数(ES6)
 
+// 并且没有自己的this， arguments， super或 new.target。 这些函数表达式更适用于那些本来需要匿名函数的地方， 并且它们不能用作构造函数。
+
 // 相当于匿名函数
 
-x => x * x 
+x => x * x
 // 等价于
 function anonymouse(x) {
     return x * x;
@@ -14,9 +16,8 @@ function anonymouse(x) {
 x => {
     if (x > 0) {
         return x * x;
-    }
-    else {
-        return - x * x;
+    } else {
+        return -x * x;
     }
 }
 
@@ -29,7 +30,7 @@ var non = () => 3.14
 // 可变参数:
 var rest = (x, y, ...rest) => {
     var i, sum = x + y;
-    for (i=0; i<rest.length; i++) {
+    for (i = 0; i < rest.length; i++) {
         sum += rest[i];
     }
     return sum;
@@ -40,7 +41,9 @@ var rest = (x, y, ...rest) => {
 // x => { foo: x }
 
 // ok:
-x => ({ foo: x })  // "()"代表 返回：{foo: x}, 类似 return {foo: x}
+x => ({
+    foo: x
+}) // "()"代表 返回：{foo: x}, 类似 return {foo: x}
 
 
 /************************************************************************************************/
@@ -66,11 +69,22 @@ var obj = {
     getAge: function (year) {
         var b = this.birth; // 1990
         var fn = (y) => y - this.birth; // this.birth仍是1990
-        return fn.call({birth:2000}, year); // this的绑定无效
+        return fn.call({
+            birth: 2000
+        }, year); // this的绑定无效
     }
 };
 obj.getAge(2015); // 25
 
 
+// 箭头函数不会创建自己的this,它只会从自己的作用域链的 "上一层" 继承this。因此，在下面的代码中，传递给setInterval的函数内的this与封闭函数中的this值相同：
 
+function Person() {
+    this.age = 0;
 
+    setInterval(() => {
+        this.age++; // 箭头函数内 |this| 正确地指向person 对象
+    }, 1000);
+}
+
+var p = new Person();

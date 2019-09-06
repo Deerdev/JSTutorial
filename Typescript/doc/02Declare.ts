@@ -48,3 +48,27 @@ let total = passthrough.b + passthrough.c.length;
 let { a: newName1, b: newName2 } = o;
 // 指定类型
 let { a, b }: { a: string, b: number } = o;
+
+// 默认值
+function keepWholeObject(wholeObject: { a: string, b?: number }) {
+  // wholeObject中 b 为 undefined 时，使用默认值 1001
+  let { a, b = 1001 } = wholeObject;
+}
+
+// 声明函数
+type C = { a: string, b?: number }
+function f({ a, b }: C): void {
+  // ...
+}
+
+class CC {
+  p = 12;
+  m() {
+  }
+}
+
+let cls = new CC();
+let clone = { ...cls };
+clone.p; // ok
+// 无法展开 函数方法
+// clone.m(); // error!

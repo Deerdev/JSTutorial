@@ -125,3 +125,40 @@ let someValue: any = "this is a string";
 let strLength1: number = (<string>someValue).length;
 // 方法2
 let strLength2: number = (someValue as string).length;
+
+
+/// dict 定义
+// key 为 string,value 为 number;
+const dic: { [key: string]: number; } = {
+  key1: 1,
+};
+// 添加key,value;
+dic['b'] = 2;
+dic.c = 3;
+
+// 遍历;
+for (const key in dic) {
+    if (dic.hasOwnProperty(key)) {
+        console.log(dic[key]);
+    }
+}
+// Map
+const dic1: Map<string, number> = new Map([
+  ['key1', 1]
+])
+  
+/// type assert
+interface Foo {
+  bar: number;
+  bas: string;
+}
+
+// var foo = <foo>bar; 效果一致
+const foo1 = {} as Foo;
+foo1.bar = 123;
+foo1.bas = 'hello';
+
+// 双重断言
+function handler(event: Event) {
+  const element = (event as any) as HTMLElement; // ok
+}

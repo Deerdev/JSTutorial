@@ -1,0 +1,21 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    /* 去除悬浮，上下滚动时的弹簧空白效果 */
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 去除选择边框-辅助 */
+    outline: none;
+}
